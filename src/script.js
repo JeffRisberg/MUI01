@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from 'material-ui/Button';
+import Button from '@material-ui/core/Button';
 
 class UserList extends React.Component {
     constructor() {
@@ -121,9 +121,11 @@ class ListOptions extends React.Component {
 }
 
 ReactDOM.render(
-    <Button variant="contained" color="primary">
-        Hello World
-    </Button>,
-    <UserList/>,
+    <div>
+        <Button variant="contained" color="primary">
+            Hello World
+        </Button>
+        <UserList/>
+    </div>,
     document.getElementById('container')
 );
