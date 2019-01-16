@@ -1,7 +1,7 @@
 module.exports = {
   mode: 'development',
   entry: {
-    javascript: "./app/script.js"
+    javascript: "./src/script.js"
   },
   output: {
     path: __dirname + "/dist",
