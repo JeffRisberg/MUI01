@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Button from 'material-ui/Button';
 
 class UserList extends React.Component {
     constructor() {
@@ -120,6 +121,9 @@ class ListOptions extends React.Component {
 }
 
 ReactDOM.render(
+    <Button variant="contained" color="primary">
+        Hello World
+    </Button>,
     <UserList/>,
     document.getElementById('container')
 );
