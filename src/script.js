@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
 
 class UserList extends React.Component {
     constructor() {
@@ -122,10 +124,25 @@ class ListOptions extends React.Component {
 
 ReactDOM.render(
     <div>
-        <Button variant="contained" color="primary">
-            Hello World
-        </Button>
-        <UserList/>
+        <div>
+            <Button variant="contained" color="primary">
+                Hello World
+            </Button>
+        </div>
+        <Grid container>
+            <Card>
+                Card1
+            </Card>
+            <Card>
+                Card2
+            </Card>
+            <Card>
+                Card2
+            </Card>
+        </Grid>
+        <Card>
+            <UserList/>
+        </Card>
     </div>,
     document.getElementById('container')
 );
