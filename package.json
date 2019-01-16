@@ -1,7 +1,6 @@
 {
-  "name": "MUI01",
+  "name": "mui01",
   "version": "1.0.0",
-  "main": "server/index.js",
   "scripts": {
     "start": "node server.js",
     "postinstall": "webpack",
@@ -11,10 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JeffRisberg/MUI01"
+    "url": "git+https://github.com/JeffRisberg/MUI01.git"
   },
   "license": "MIT",
   "dependencies": {
+    "@material-ui/core": "^3.9.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },
@@ -33,5 +33,12 @@
     "react-hot-loader": "^4.6.3",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1"
-  }
+  },
+  "description": "Based on the React tutorial.",
+  "bugs": {
+    "url": "https://github.com/JeffRisberg/MUI01/issues"
+  },
+  "homepage": "https://github.com/JeffRisberg/MUI01#readme",
+  "main": "server.js",
+  "author": ""
 }
