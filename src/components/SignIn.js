@@ -37,12 +37,6 @@ const currencies = [
 
 function SignIn(props) {
     const { classes } = props;
-    const [values, setValues] = React.useState({
-        name: 'Cat in the Hat',
-        age: '',
-        multiline: 'Controlled',
-        currency: 'EUR',
-    });
 
     return (
         <form className={classes.container} noValidate autoComplete="off">
@@ -50,13 +44,13 @@ function SignIn(props) {
                 id="standard-name"
                 label="Name"
                 className={classes.textField}
-                value={values.name}
+                value="Frodo Baggins"
                 margin="normal"
             />
             <TextField
                 id="standard-uncontrolled"
-                label="Uncontrolled"
-                defaultValue="foo"
+                label="Address"
+                defaultValue="The Shire"
                 className={classes.textField}
                 margin="normal"
             />
