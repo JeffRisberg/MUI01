@@ -1,9 +1,11 @@
 import React from 'react';
 import Footer from './Footer';
 import UserList from './UserList';
+import SignIn from './SignIn';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
 
 const styles = {
     root: {
@@ -33,6 +35,9 @@ const App = props => (
             <Card>
                 Card2
             </Card>
+            <Icon>
+                Icon
+            </Icon>
         </Grid>
         <UserList/>
         <Footer/>
