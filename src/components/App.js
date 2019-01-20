@@ -40,6 +40,7 @@ const App = props => (
             </Icon>
         </Grid>
         <UserList/>
+        <SignIn/>
         <Footer/>
     </div>
 );
