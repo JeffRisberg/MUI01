@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Footer = () => (
-  <p>
-    this is the footer.
-  </p>
+  <div style={{marginTop: "10px", background: "#eee"}}>
+    The Risberg Family
+  </div>
 );
 
 export default Footer;
