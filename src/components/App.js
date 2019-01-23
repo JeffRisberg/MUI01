@@ -2,11 +2,13 @@ import React from 'react';
 import Footer from './Footer';
 import UserList from './UserList';
 import SignIn from './SignIn';
+import GuttersGrid from './GuttersGrid';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import SvgIcon from '@material-ui/core/SvgIcon';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
     root: {
@@ -29,13 +31,17 @@ const App = props => (
         <Button variant="contained" color="primary">
             Hello World
         </Button>
-        <Grid>
+        <Grid container>
+            <Grid item>
             <Card>
                 Card1
             </Card>
+            </Grid>
+            <Grid item>
             <Card>
                 Card2
             </Card>
+            </Grid>
             <Icon>
                 Icon
             </Icon>
@@ -44,9 +50,10 @@ const App = props => (
             </SvgIcon>
         </Grid>
         <UserList/>
+        <GuttersGrid/>
         <SignIn/>
         <Footer/>
     </div>
 );
 
-export default App;
+export default withStyles(styles)(App);
