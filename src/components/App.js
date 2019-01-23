@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from './Footer';
 import UserList from './UserList';
 import SignIn from './SignIn';
-import GuttersGrid from './GuttersGrid';
+import GridSet from './GridSet';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
@@ -50,7 +50,7 @@ const App = props => (
             </SvgIcon>
         </Grid>
         <UserList/>
-        <GuttersGrid/>
+        <GridSet/>
         <SignIn/>
         <Footer/>
     </div>
