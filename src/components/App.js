@@ -3,6 +3,7 @@ import Footer from './Footer';
 import UserList from './UserList';
 import SignIn from './SignIn';
 import GridSet from './GridSet';
+import GridSet2 from './GridSet2';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
@@ -51,6 +52,7 @@ const App = props => (
         </Grid>
         <UserList/>
         <GridSet/>
+        <GridSet2/>
         <SignIn/>
         <Footer/>
     </div>
