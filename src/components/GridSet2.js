@@ -44,7 +44,6 @@ class GridSet2 extends React.Component {
                     <Paper className={classes.paper}>xs=3</Paper>
                 </Grid>
             </Grid>
-            < /div>
         )
     }
 }
