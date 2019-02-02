@@ -4,15 +4,16 @@ import {withStyles} from '@material-ui/core/styles';
 const styles = {
     root: {
         marginTop: "10px",
-        background: "#eee"
+        background: "#f44"
     },
 };
 
 function Footer(props) {
     const {classes} = props;
+    const spacing = 16;
 
     return (
-        <div style={{marginTop: "10px", background: "#eee"}}>
+        <div className={classes.root}>
             The Risberg Family
         </div>
     );
