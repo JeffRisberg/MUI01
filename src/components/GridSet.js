@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -14,7 +14,7 @@ const styles = theme => ({
     }
 });
 
-class GridSet extends React.Component {
+class GridSet extends Component {
     render() {
         const {classes} = this.props;
         const spacing = 16;
