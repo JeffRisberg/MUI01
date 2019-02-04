@@ -4,44 +4,41 @@ import Course from '../components/Course'
 
 class CourseList extends Component {
 
-    constructor() {
-        super();
-        this.state = {
-            courses: [
-                {
-                    "sys": {"id": 1},
-                    "fields": {
-                        "title": "How to use React for Applications",
-                        "description": "Covers updates to React during 2018",
-                        "author": "Tom Jones",
-                        "url": "http://www.tibco.com",
-                        "courseImage": { "fields": { file: { url: "public/015.jpg"}}}
-                    }
-                },
-                {
-                    "sys": {"id": 2},
-                    "fields": {
-                        "title": "Kubernetes management at scale",
-                        "description": "Allows you to manage a Kubernetes cluster",
-                        "author": "Peter Woods",
-                        "url": "http://www.blizzard.com",
-                        "courseImage": { "fields": { file: { url: "public/016.jpg"}}}
-                    }
-                },
-                {
-                    "sys": {"id": 3},
-                    "fields": {
-                        "title": "Using Apache Spark",
-                        "description": "Scalable machine learning applications",
-                        "author": "Fred Smith",
-                        "url": "http://www.tibco.com",
-                        "courseImage": { "fields": { file: { url: "public/017.jpg"}}}
-                    }
+    state = {
+        courses: [
+            {
+                "sys": {"id": 1},
+                "fields": {
+                    "title": "How to use React for Applications",
+                    "description": "Covers updates to React during 2018",
+                    "author": "Tom Jones",
+                    "url": "http://www.tibco.com",
+                    "courseImage": {"fields": {file: {url: "public/015.jpg"}}}
                 }
-            ],
-            searchString: ''
-        };
-    }
+            },
+            {
+                "sys": {"id": 2},
+                "fields": {
+                    "title": "Kubernetes management at scale",
+                    "description": "Allows you to manage a Kubernetes cluster",
+                    "author": "Peter Woods",
+                    "url": "http://www.blizzard.com",
+                    "courseImage": {"fields": {file: {url: "public/016.jpg"}}}
+                }
+            },
+            {
+                "sys": {"id": 3},
+                "fields": {
+                    "title": "Using Apache Spark",
+                    "description": "Scalable machine learning applications",
+                    "author": "Fred Smith",
+                    "url": "http://www.tibco.com",
+                    "courseImage": {"fields": {file: {url: "public/017.jpg"}}}
+                }
+            }
+        ],
+        searchString: ''
+    };
 
     render() {
         return (
