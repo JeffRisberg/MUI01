@@ -4,6 +4,7 @@ import {withStyles} from '@material-ui/core/styles';
 const styles = {
     root: {
         marginTop: "10px",
+        padding: "5px",
         background: "#f44"
     },
 };
