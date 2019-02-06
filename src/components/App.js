@@ -3,10 +3,10 @@ import Footer from './Footer';
 import UserList from './UserList';
 import SignIn from './SignIn';
 import CourseList from './CourseList';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 const styles = {
     root: {
@@ -27,16 +27,16 @@ const styles = {
 const App = props => (
     <MuiThemeProvider theme={createMuiTheme()}>
         <Router>
-            <Route path='/' component={Navigation} />
+            <Route path='/' component={Navigation}/>
         </Router>
         <Router>
             <Switch>
-                <Route path="/" exact component={CourseList} />
-                <Route path="/registration" component={Signin} />
-                <Route path="/settings" component={Settings} />
-                <Route path="/users" component={UserList} />
+                <Route path="/" exact component={CourseList}/>
+                <Route path="/registration" component={SignIn}/>
+                <Route path="/users" component={UserList}/>
             </Switch>
         </Router>
+        <Footer/>
     </MuiThemeProvider>
 );
 
