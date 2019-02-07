@@ -6,7 +6,7 @@ import CourseList from './CourseList';
 import {withStyles} from '@material-ui/core/styles';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import Navigation from './Navigation';
 
 const styles = {
@@ -25,20 +25,28 @@ const styles = {
     },
 };
 
-const App = props => (
-    <MuiThemeProvider theme={createMuiTheme()}>
-        <Router>
-            <Route path='/' component={Navigation}/>
-        </Router>
-        <Router>
-            <Switch>
-                <Route path="/" exact component={CourseList}/>
-                <Route path="/registration" component={SignIn}/>
-                <Route path="/users" component={UserList}/>
-            </Switch>
-        </Router>
-        <Footer/>
-    </MuiThemeProvider>
-);
+class App extends React.Component {
+    state = {
+        //  theme: Themes()
+    };
+
+    render() {
+        return (
+            <MuiThemeProvider theme={createMuiTheme()}>
+                <Router>
+                    <Route path='/' component={Navigation}/>
+                </Router>
+                <Router>
+                    <Switch>
+                        <Route path="/" exact component={CourseList}/>
+                        <Route path="/registration" component={SignIn}/>
+                        <Route path="/users" component={UserList}/>
+                    </Switch>
+                </Router>
+                <Footer/>
+            </MuiThemeProvider>
+        );
+    }
+}
 
 export default withStyles(styles)(App);
