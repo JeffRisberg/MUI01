@@ -4,8 +4,12 @@ import UserList from './UserList';
 import SignIn from './SignIn';
 import CourseList from './CourseList';
 import {withStyles} from '@material-ui/core/styles';
+
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme'
+import purple from '@material-ui/core/colors/purple';
+import green from '@material-ui/core/colors/green';
+
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import Navigation from './Navigation';
 
@@ -25,6 +29,16 @@ const styles = {
     },
 };
 
+const theme = createMuiTheme({
+    palette: {
+        primary: purple,
+        secondary: green,
+    },
+    status: {
+        danger: 'orange',
+    },
+});
+
 class App extends React.Component {
     state = {
         //  theme: Themes()
@@ -32,7 +46,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <MuiThemeProvider theme={createMuiTheme()}>
+            <MuiThemeProvider theme={theme}>
                 <Router>
                     <Route path='/' component={Navigation}/>
                 </Router>

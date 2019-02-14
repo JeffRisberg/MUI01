@@ -88,6 +88,7 @@ class UserList extends React.Component {
     render() {
         return (
             <div>
+                <img src="public/logo.gif" />
                 <ul>
                     <ListOptions options={this.userList}/>
                 </ul>
