@@ -1,7 +1,6 @@
-import React from 'react';
-import classNames from 'classnames';
-import { withStyles } from '@material-ui/styles';
-import MenuItem from '@material-ui/core/MenuItem';
+import React, {Component} from 'react'
+import PropTypes from 'prop-types';
+import {withStyles} from '@material-ui/styles';
 import TextField from '@material-ui/core/TextField';
 
 const styles = {
@@ -35,27 +34,34 @@ const currencies = [
     },
 ];
 
-function SignIn(props) {
-    const { classes } = props;
+class SignIn extends Component {
 
-    return (
-        <form className={classes.container} noValidate autoComplete="off">
-            <TextField
-                id="standard-name"
-                label="Name"
-                className={classes.textField}
-                value="Frodo Baggins"
-                margin="normal"
-            />
-            <TextField
-                id="standard-uncontrolled"
-                label="Address"
-                defaultValue="The Shire"
-                className={classes.textField}
-                margin="normal"
-            />
-        </form>
-    );
+    render() {
+        const {classes} = this.props;
+
+        return (
+            <form className={classes.container} noValidate autoComplete="off">
+                <TextField
+                    id="standard-name"
+                    label="Name"
+                    className={classes.textField}
+                    value="Frodo Baggins"
+                    margin="normal"
+                />
+                <TextField
+                    id="standard-uncontrolled"
+                    label="Address"
+                    defaultValue="The Shire"
+                    className={classes.textField}
+                    margin="normal"
+                />
+            </form>
+        );
+    }
 }
+
+SignIn.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(SignIn);

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react'
 import ListOptions from './ListOptions';
 
-class UserList extends React.Component {
+class UserList extends Component {
     constructor() {
         super();
 

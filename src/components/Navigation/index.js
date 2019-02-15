@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react'
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 
@@ -23,29 +23,32 @@ const styles = {
     },
 };
 
-function Navigation(props) {
-    const {classes} = props;
-    return (
-        <div className={classes.root}>
-            <AppBar position="static">
-                <Toolbar>
-                    <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-                        <MenuIcon/>
-                    </IconButton>
-                    <Typography variant="h6" color="inherit" className={classes.grow}>
-                        <a href="/">Home</a>
-                    </Typography>
-                    <Typography variant="h6" color="inherit" className={classes.grow}>
-                        <a href="#users">Users</a>
-                    </Typography>
-                    <Typography variant="h6" color="inherit" className={classes.grow}>
-                        <a href="#registration">Registration</a>
-                    </Typography>
-                    <Button color="inherit">Login</Button>
-                </Toolbar>
-            </AppBar>
-        </div>
-    );
+class Navigation extends Component {
+    render() {
+        const {classes} = this.props;
+
+        return (
+            <div className={classes.root}>
+                <AppBar position="static">
+                    <Toolbar>
+                        <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+                            <MenuIcon/>
+                        </IconButton>
+                        <Typography variant="h6" color="inherit" className={classes.grow}>
+                            <a href="/">Home</a>
+                        </Typography>
+                        <Typography variant="h6" color="inherit" className={classes.grow}>
+                            <a href="#users">Users</a>
+                        </Typography>
+                        <Typography variant="h6" color="inherit" className={classes.grow}>
+                            <a href="#registration">Registration</a>
+                        </Typography>
+                        <Button color="inherit">Login</Button>
+                    </Toolbar>
+                </AppBar>
+            </div>
+        );
+    }
 }
 
 Navigation.propTypes = {
