@@ -38,6 +38,7 @@
     "nconf": "^0.10.0",
     "react-addons-test-utils": "^15.6.2",
     "react-hot-loader": "^4.6.5",
+    "react-scripts": "^2.1.5",
     "webpack": "^4.29.4",
     "webpack-cli": "^3.2.3"
   },
