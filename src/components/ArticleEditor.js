@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -62,10 +64,14 @@ class ArticleEditor extends Component {
                     <Editor name="text"
                             initialValue="<p>Enter your article here</p>"
                             init={{
+                                branding: false,
+                                menubar: false,
                                 plugins: 'link image code',
-                                toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
+                                toolbar: 'undo redo | italic underline | bullist alignleft aligncenter | code'
                             }}
                     />
+                    <h2>Tag entry area goes here</h2>
+                    <TextField />
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={this.handleSave} color="primary" disabled={loading}>
