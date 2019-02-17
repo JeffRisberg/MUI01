@@ -1,4 +1,4 @@
-import { OVERLAY_OPEN, OVERLAY_CLOSE } from '../constants/action-types';
+import { OVERLAY_OPEN, OVERLAY_CLOSE } from '../constants/index';
 
 export const overlayOpen = (overlay) => {
    return {

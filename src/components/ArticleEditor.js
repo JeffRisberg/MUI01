@@ -10,8 +10,8 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 import * as OverlayActions from '../actions/Overlay';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 
 class ArticleEditor extends Component {
     state = {
@@ -52,23 +52,24 @@ class ArticleEditor extends Component {
                 open={open}
                 keepMounted
                 onClose={this.handleCancel}
-                aria-labelledby="alert-dialog-slide-title"
-                aria-describedby="alert-dialog-slide-description"
+                aria-labelledby="edit-dialog-title"
+                aria-describedby="edit-dialog-description"
             >
-                <DialogTitle id="alert-dialog-slide-title">
+                <DialogTitle id="edit-dialog-title">
                     Enter article text
                 </DialogTitle>
                 <DialogContent>
-                    <DialogContentText id="alert-dialog-slide-description">
-                        <form>
-                            <FormGroup>
-                                <TextField
-                                    label='Your Text'
-                                    value={state.text || ''}
-                                />
-                            </FormGroup>
-                        </form>
+                    <DialogContentText id="edit-dialog-description">
+                        Use Rich text editing
                     </DialogContentText>
+                    <form>
+                        <FormGroup>
+                            <TextField
+                                label='Your Text'
+                                value={state.text || ''}
+                            />
+                        </FormGroup>
+                    </form>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={this.handleSave} color="primary" disabled={loading}>
@@ -85,11 +86,11 @@ class ArticleEditor extends Component {
 
 const mapStateToProps = (state) => {
     console.log('ArticleEditor', state);
-    return { ...state.overlay };
+    return {...state.overlay};
 };
 
 const mapDispatchToProps = (dispatch) => (
-    bindActionCreators({ ...OverlayActions }, dispatch)
+    bindActionCreators({...OverlayActions}, dispatch)
 );
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleEditor);
