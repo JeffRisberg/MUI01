@@ -14,7 +14,6 @@ import green from '@material-ui/core/colors/green';
 
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 
-console.log("x");
 const styles = {
     root: {
         textAlign: 'center',

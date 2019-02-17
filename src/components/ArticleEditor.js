@@ -16,14 +16,13 @@ class ArticleEditor extends Component {
     };
 
     static propTypes = {
-        open: PropTypes.bool,
+        //open: PropTypes.bool,
     };
 
     handleSave = () => {
-        console.log('ArticleText', this.state.text, this.state.tags);
+        console.log('Article Text:', this.state.text, this.state.tags);
         if (this.state.text && this.state.tags) {
-            //const { authenticationQuery } = AuthenticationActions;
-            //Store.dispatch(authenticationQuery(this.state.username, this.state.password));
+            // save
         }
     };
 
@@ -36,13 +35,14 @@ class ArticleEditor extends Component {
     }
 
     render() {
-        const self = this, {state, props} = this;
-        const {open, loading} = props;
         console.log('ArticleEditor,', this.props);
+
+        const self = this, {state, props} = this;
+        const open = true; //props;
+
         return (
             <Dialog
                 open={open}
-                TransitionComponent={Transition}
                 keepMounted
                 onClose={this.handleCancel}
                 aria-labelledby="alert-dialog-slide-title"
@@ -56,19 +56,18 @@ class ArticleEditor extends Component {
                         <form>
                             <FormGroup>
                                 <TextField
-                                    label={Locale('Your Text')}
+                                    label='Your Text'
                                     value={state.text || ''}
-                                    onChange={self.propUpdate('text')}
                                 />
                             </FormGroup>
                         </form>
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={this.handleSave} color="primary" disabled={loading}>
+                    <Button onClick={this.handleSave} color="primary">
                         Save
                     </Button>
-                    <Button onClick={this.handleCancel} color="primary" disabled={loading}>
+                    <Button onClick={this.handleCancel} color="primary">
                         Cancel
                     </Button>
                 </DialogActions>
