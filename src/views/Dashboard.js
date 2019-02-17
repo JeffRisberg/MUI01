@@ -2,13 +2,22 @@ import React, {Component} from 'react'
 import ArticleList from '../components/ArticleList'
 import ArticleEditor from '../components/ArticleEditor'
 import Button from '@material-ui/core/Button'
+import { withStyles } from '@material-ui/core/styles';
 
 /**
  * shows an article list, with editing operations
  */
+const styles = (theme) => ({
+    grid: {
+        height: '500px',
+    }
+});
+
 class Dashboard extends Component {
 
     newArticle() {
+        console.log("newArticle");
+
         // open the editor
 
     }
@@ -16,7 +25,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-                <Button>Post New Article</Button>
+                <Button onClick={newArticle}>Post New Article</Button>
                 <ArticleList>
                 </ArticleList>
 
@@ -27,4 +36,4 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard;
+export default withStyles(styles)(Dashboard);

@@ -1,5 +1,12 @@
 import React, {Component} from 'react'
 import ListOptions from '../components/ListOptions';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = (theme) => ({
+    grid: {
+        height: '500px',
+    }
+});
 
 class UserList extends Component {
     constructor() {
@@ -104,4 +111,4 @@ class UserList extends Component {
     }
 }
 
-export default UserList;
+export default withStyles(styles)(UserList);

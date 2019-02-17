@@ -9,6 +9,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
+import * as OverlayActions from '../actions/Overlay';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class ArticleEditor extends Component {
@@ -82,13 +84,12 @@ class ArticleEditor extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log('Login', state);
-    // authentication
+    console.log('ArticleEditor', state);
     return { ...state.overlay };
 };
 
 const mapDispatchToProps = (dispatch) => (
-    //bindActionCreators({ ...AuthenticationActions, ...OverlayActions }, dispatch)
+    bindActionCreators({ ...OverlayActions }, dispatch)
 );
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleEditor);
