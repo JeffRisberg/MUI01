@@ -80,7 +80,7 @@ class ArticleEditor extends Component {
                             init={{
                                 branding: false,
                                 menubar: false,
-                                plugins: 'link image code',
+                                plugins: 'lists link image code',
                                 toolbar: 'undo redo | bold italic underline | bullist numlist | alignleft aligncenter alignright | code'
                             }}
                     />
