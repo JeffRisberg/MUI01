@@ -9,6 +9,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
+import { connect } from 'react-redux';
+
 class ArticleEditor extends Component {
     state = {
         text: 'Hello this is an article',
@@ -16,7 +18,8 @@ class ArticleEditor extends Component {
     };
 
     static propTypes = {
-        //open: PropTypes.bool,
+        open: PropTypes.bool,
+        loading: PropTypes.bool,
     };
 
     handleSave = () => {
@@ -24,10 +27,12 @@ class ArticleEditor extends Component {
         if (this.state.text && this.state.tags) {
             // save
         }
+        self.props.overlayClose('login');
     };
 
     handleCancel = () => {
         const self = this;
+        self.props.overlayClose('login');
     };
 
     componentDidMount() {
@@ -38,7 +43,7 @@ class ArticleEditor extends Component {
         console.log('ArticleEditor,', this.props);
 
         const self = this, {state, props} = this;
-        const open = true; //props;
+        const {open, loading} = props;
 
         return (
             <Dialog
@@ -64,10 +69,10 @@ class ArticleEditor extends Component {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={this.handleSave} color="primary">
+                    <Button onClick={this.handleSave} color="primary" disabled={loading}>
                         Save
                     </Button>
-                    <Button onClick={this.handleCancel} color="primary">
+                    <Button onClick={this.handleCancel} color="primary" disabled={loading}>
                         Cancel
                     </Button>
                 </DialogActions>
@@ -76,4 +81,14 @@ class ArticleEditor extends Component {
     }
 }
 
-export default ArticleEditor;
+const mapStateToProps = (state) => {
+    console.log('Login', state);
+    // authentication
+    return { ...state.overlay };
+};
+
+const mapDispatchToProps = (dispatch) => (
+    //bindActionCreators({ ...AuthenticationActions, ...OverlayActions }, dispatch)
+);
+
+export default connect(mapStateToProps, mapDispatchToProps)(ArticleEditor);

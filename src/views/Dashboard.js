@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import ArticleList from '../components/ArticleList'
+import ArticleEditor from '../components/ArticleEditor'
 import Button from '@material-ui/core/Button'
 
 /**
@@ -8,7 +9,8 @@ import Button from '@material-ui/core/Button'
 class Dashboard extends Component {
 
     newArticle() {
-        // to be filled in
+        // open the editor
+
     }
 
     render() {
@@ -16,8 +18,10 @@ class Dashboard extends Component {
             <div>
                 <Button>Post New Article</Button>
                 <ArticleList>
-
                 </ArticleList>
+
+                <ArticleEditor open={true} loading={false}>
+                </ArticleEditor>
             </div>
         )
     }
