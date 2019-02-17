@@ -41,6 +41,9 @@ class Navigation extends Component {
                             <a href="#users">Users</a>
                         </Typography>
                         <Typography variant="h6" color="inherit" className={classes.grow}>
+                            <a href="#articleEditor">Article Editor</a>
+                        </Typography>
+                        <Typography variant="h6" color="inherit" className={classes.grow}>
                             <a href="#registration">Registration</a>
                         </Typography>
                         <Button color="inherit">Login</Button>

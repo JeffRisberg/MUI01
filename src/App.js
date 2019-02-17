@@ -1,8 +1,10 @@
 import React from 'react';
-import Footer from './Footer';
-import UserList from './UserList';
-import SignIn from './SignIn';
-import CourseList from './CourseList';
+import Footer from './components/Footer';
+import Navigation from './components/Navigation';
+import UserList from './components/UserList';
+//import ArticleEditor from './components/ArticleEditor';
+import SignIn from './components/SignIn';
+import CourseList from './components/CourseList';
 import {withStyles} from '@material-ui/core/styles';
 
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
@@ -11,7 +13,6 @@ import purple from '@material-ui/core/colors/purple';
 import green from '@material-ui/core/colors/green';
 
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';
-import Navigation from './Navigation';
 
 const styles = {
     root: {
@@ -45,6 +46,7 @@ class App extends React.Component {
     };
 
     render() {
+        console.log("app render");
         return (
             <MuiThemeProvider theme={theme}>
                 <Router>
@@ -54,6 +56,7 @@ class App extends React.Component {
                     <Switch>
                         <Route path="/" exact component={CourseList}/>
                         <Route path="/registration" component={SignIn}/>
+                        <Route path="/articleEditor" component={ArticleEditor}/>
                         <Route path="/users" component={UserList}/>
                     </Switch>
                 </Router>
