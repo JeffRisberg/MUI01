@@ -14,6 +14,11 @@ const styles = (theme) => ({
 });
 
 class Dashboard extends Component {
+    constructor(props) {
+        super(props);
+
+        this.newArticle = this.newArticle.bind(this);
+    }
 
     newArticle() {
         console.log("newArticle");
@@ -25,11 +30,11 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-                <Button onClick={newArticle}>Post New Article</Button>
+                <Button onClick={this.newArticle}>Post New Article</Button>
                 <ArticleList>
                 </ArticleList>
 
-                <ArticleEditor open={true} loading={false}>
+                <ArticleEditor open={false} loading={false}>
                 </ArticleEditor>
             </div>
         )
