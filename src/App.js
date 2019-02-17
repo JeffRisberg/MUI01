@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import UserList from './components/UserList';
-//import ArticleEditor from './components/ArticleEditor';
+import ArticleEditor from './components/ArticleEditor';
 import SignIn from './components/SignIn';
 import CourseList from './components/CourseList';
 import {withStyles} from '@material-ui/core/styles';
@@ -14,6 +14,7 @@ import green from '@material-ui/core/colors/green';
 
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 
+console.log("x");
 const styles = {
     root: {
         textAlign: 'center',
