@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 import Grid from '@material-ui/core/Grid'
-import Course from '../components/Course'
+import Article from './Article'
 
-class CourseList extends Component {
+class ArticleList extends Component {
 
     state = {
-        courses: [
+        articles: [
             {
                 "sys": {"id": 1},
                 "fields": {
@@ -13,7 +13,7 @@ class CourseList extends Component {
                     "description": "Covers updates to React during 2018",
                     "author": "Tom Jones",
                     "url": "http://www.reactjs.org",
-                    "courseImage": {"fields": {file: {url: "public/015.jpg"}}}
+                    "image": {"fields": {file: {url: "public/015.jpg"}}}
                 }
             },
             {
@@ -23,7 +23,7 @@ class CourseList extends Component {
                     "description": "Scalable machine learning applications",
                     "author": "Fred Smith",
                     "url": "http://www.tibco.com",
-                    "courseImage": {"fields": {file: {url: "public/017.jpg"}}}
+                    "image": {"fields": {file: {url: "public/017.jpg"}}}
                 }
             },
             {
@@ -33,7 +33,7 @@ class CourseList extends Component {
                     "description": "Allows you to manage a Kubernetes cluster",
                     "author": "Peter Woods",
                     "url": "http://www.blizzard.com",
-                    "courseImage": {"fields": {file: {url: "public/016.jpg"}}}
+                    "image": {"fields": {file: {url: "public/016.jpg"}}}
                 }
             }
         ],
@@ -43,20 +43,20 @@ class CourseList extends Component {
     render() {
         return (
             <div>
-                {this.state.courses ? (
+                {this.state.articles ? (
                     <div>
                         <Grid container spacing={24} style={{padding: 24}}>
-                            {this.state.courses.map(currentCourse => (
-                                <Grid key={currentCourse.sys.id} item xs={12} sm={6} lg={4} xl={3}>
-                                    <Course course={currentCourse}/>
+                            {this.state.articles.map(article => (
+                                <Grid key={article.sys.id} item xs={12} sm={6} lg={4} xl={3}>
+                                    <Article article={article}/>
                                 </Grid>
                             ))}
                         </Grid>
                     </div>
-                ) : "No courses found"}
+                ) : "No articles found"}
             </div>
         )
     }
 }
 
-export default CourseList;
+export default ArticleList;

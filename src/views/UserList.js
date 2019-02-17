@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import ListOptions from './ListOptions';
+import ListOptions from '../components/ListOptions';
 
 class UserList extends Component {
     constructor() {

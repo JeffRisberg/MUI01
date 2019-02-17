@@ -20,27 +20,27 @@ const styles = theme => ({
     }
 });
 
-const Course = (props) => {
+const Article = (props) => {
     const { classes } = props;
 
     return(
         <div>
-            { props.course ? (
+            { props.article ? (
                 <Card>
                     <CardMedia style={{height: 0, paddingTop: '56.25%'}}
-                               image={props.course.fields.courseImage.fields.file.url}
-                               title={props.course.fields.title}
+                               image={props.article.fields.image.fields.file.url}
+                               title={props.article.fields.title}
                     />
                     <CardContent>
                         <Typography gutterBottom variant="headline" component="h2">
-                            {props.course.fields.title}
+                            {props.article.fields.title}
                         </Typography>
                         <Typography component="p">
-                            {props.course.fields.description}
+                            {props.article.fields.description}
                         </Typography>
                     </CardContent>
                     <CardActions>
-                        <Button size="small" color="primary" href={props.course.fields.url} target="_blank">
+                        <Button size="small" color="primary" href={props.article.fields.url} target="_blank">
                             Go To Course
                         </Button>
                         <IconButton className={classes.actionButton} color="inherit" aria-label="Menu">
@@ -62,4 +62,4 @@ const Course = (props) => {
     )
 };
 
-export default withStyles(styles)(Course);
+export default withStyles(styles)(Article);

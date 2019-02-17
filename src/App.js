@@ -1,10 +1,9 @@
 import React from 'react';
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
-import UserList from './components/UserList';
-import ArticleEditor from './components/ArticleEditor';
-import SignIn from './components/SignIn';
-import CourseList from './components/CourseList';
+import Splash from './views/Splash'
+import Dashboard from './views/Dashboard';
+import UserList from './views/UserList';
 import {withStyles} from '@material-ui/core/styles';
 
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
@@ -54,9 +53,8 @@ class App extends React.Component {
                 </Router>
                 <Router>
                     <Switch>
-                        <Route path="/" exact component={CourseList}/>
-                        <Route path="/registration" component={SignIn}/>
-                        <Route path="/articleEditor" component={ArticleEditor}/>
+                        <Route path="/" exact component={Splash}/>
+                        <Route path="/dashboard" component={Dashboard}/>
                         <Route path="/users" component={UserList}/>
                     </Switch>
                 </Router>

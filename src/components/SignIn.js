@@ -15,25 +15,6 @@ const styles = {
     },
 };
 
-const currencies = [
-    {
-        value: 'USD',
-        label: '$',
-    },
-    {
-        value: 'EUR',
-        label: '€',
-    },
-    {
-        value: 'BTC',
-        label: '฿',
-    },
-    {
-        value: 'JPY',
-        label: '¥',
-    },
-];
-
 class SignIn extends Component {
 
     render() {
