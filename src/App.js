@@ -8,8 +8,8 @@ import {withStyles} from '@material-ui/core/styles';
 
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme'
-import purple from '@material-ui/core/colors/purple';
-import green from '@material-ui/core/colors/green';
+import lightBlue from '@material-ui/core/colors/lightBlue';
+import grey from '@material-ui/core/colors/grey';
 
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 
@@ -31,8 +31,8 @@ const styles = {
 
 const theme = createMuiTheme({
     palette: {
-        primary: purple,
-        secondary: green,
+        primary: lightBlue,
+        secondary: grey,
     },
     status: {
         danger: 'orange',
@@ -45,7 +45,6 @@ class App extends React.Component {
     };
 
     render() {
-        console.log("app render");
         return (
             <MuiThemeProvider theme={theme}>
                 <Router>

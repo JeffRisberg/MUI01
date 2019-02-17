@@ -41,7 +41,7 @@ const Article = (props) => {
                     </CardContent>
                     <CardActions>
                         <Button size="small" color="primary" href={props.article.fields.url} target="_blank">
-                            Go To Course
+                            Go To Article
                         </Button>
                         <IconButton className={classes.actionButton} color="inherit" aria-label="Menu">
                             <ThumbupIcon />

@@ -1,40 +1,44 @@
 import React, {Component} from 'react'
+import Button from '@material-ui/core/Button'
 import ArticleList from '../components/ArticleList'
 import ArticleEditor from '../components/ArticleEditor'
-import Button from '@material-ui/core/Button'
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 
 /**
  * shows an article list, with editing operations
  */
 const styles = (theme) => ({
     grid: {
-        height: '500px',
+        height: '50px',
     }
 });
 
 class Dashboard extends Component {
     constructor(props) {
         super(props);
+        this.state = {editorOpen: false};
 
-        this.newArticle = this.newArticle.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    newArticle() {
+    handleClick() {
         console.log("newArticle");
 
         // open the editor
-
+        this.setState(state => ({
+            editorOpen: !state.editorOpen
+        }));
     }
 
     render() {
+        const editorOpen = this.state.editorOpen;
         return (
             <div>
-                <Button onClick={this.newArticle}>Post New Article</Button>
+                <Button onClick={this.handleClick}>Post Article</Button>
                 <ArticleList>
                 </ArticleList>
 
-                <ArticleEditor open={false} loading={false}>
+                <ArticleEditor open={editorOpen} loading={false}>
                 </ArticleEditor>
             </div>
         )
