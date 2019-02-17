@@ -13,11 +13,21 @@ import {Editor} from '@tinymce/tinymce-react';
 import * as OverlayActions from '../actions/Overlay';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = theme => ({
+    root: {
+    },
+    dialogText: {
+        color: "#000"
+    }
+});
+
 
 class ArticleEditor extends Component {
     state = {
-        text: 'Hello this is an article',
-        tags: '123456'
+        text: 'For the way you live',
+        tags: 'acupuncture'
     };
 
     static propTypes = {
@@ -30,22 +40,23 @@ class ArticleEditor extends Component {
         if (this.state.text && this.state.tags) {
             // save
         }
-        self.props.overlayClose('login');
+        self.props.overlayClose('save');
     };
 
     handleCancel = () => {
         const self = this;
-        self.props.overlayClose('login');
+        self.props.overlayClose('cancel');
     };
 
     componentDidMount() {
-        console.log('Check automation', this.props);
+        console.log('loading data', this.props);
     }
 
     render() {
-        console.log('ArticleEditor,', this.props);
+        console.log('ArticleEditor', this.props);
 
-        const self = this, {state, props} = this;
+        const {state, props} = this;
+        const { classes } = props;
         const {open, loading} = props;
 
         return (
@@ -58,20 +69,26 @@ class ArticleEditor extends Component {
                 aria-describedby="edit-dialog-description"
             >
                 <DialogTitle id="edit-dialog-title">
-                    Enter article text
+                    Create New Article
                 </DialogTitle>
                 <DialogContent>
+                    <DialogContentText className={classes.dialogText}>
+                        Enter article text:
+                    </DialogContentText>
                     <Editor name="text"
-                            initialValue="<p>Enter your article here</p>"
+                            initialValue={state.text}
                             init={{
                                 branding: false,
                                 menubar: false,
                                 plugins: 'link image code',
-                                toolbar: 'undo redo | italic underline | bullist alignleft aligncenter | code'
+                                toolbar: 'undo redo | bold italic underline | bullist numlist | alignleft aligncenter alignright | code'
                             }}
                     />
-                    <h2>Tag entry area goes here</h2>
-                    <TextField />
+                    <DialogContentText className={classes.dialogText}>
+                    Enter tags:
+                    </DialogContentText>
+                    <TextField name="tags" value={state.tags} fullWidth>
+                    </TextField>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={this.handleSave} color="primary" disabled={loading}>
@@ -95,4 +112,4 @@ const mapDispatchToProps = (dispatch) => (
     bindActionCreators({...OverlayActions}, dispatch)
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArticleEditor);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(ArticleEditor));

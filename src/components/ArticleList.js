@@ -1,6 +1,15 @@
 import React, {Component} from 'react'
 import Grid from '@material-ui/core/Grid'
 import Article from './Article'
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = theme => ({
+    root: {
+    },
+    actionButton: {
+        background: "#AAF"
+    }
+});
 
 class ArticleList extends Component {
 
@@ -41,6 +50,8 @@ class ArticleList extends Component {
     };
 
     render() {
+        const { classes } = this.props;
+
         return (
             <div>
                 {this.state.articles ? (
@@ -59,4 +70,4 @@ class ArticleList extends Component {
     }
 }
 
-export default ArticleList;
+export default withStyles(styles)(ArticleList);
