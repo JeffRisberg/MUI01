@@ -33,6 +33,10 @@ const theme = createMuiTheme({
     palette: {
         primary: lightBlue,
         secondary: grey,
+        text: {
+            primary: '#000',
+            secondary: '#888'
+        }
     },
     status: {
         danger: 'orange',

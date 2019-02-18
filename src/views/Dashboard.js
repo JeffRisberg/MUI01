@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 import Button from '@material-ui/core/Button'
+import Grid from '@material-ui/core/Grid'
 import ArticleList from '../components/ArticleList'
 import ArticleEditor from '../components/ArticleEditor'
+import LeftSide from '../components/LeftSide'
 import {withStyles} from '@material-ui/core/styles';
 
 /**
@@ -33,14 +35,21 @@ class Dashboard extends Component {
     render() {
         const editorOpen = this.state.editorOpen;
         return (
-            <div>
-                <Button onClick={this.handleClick}>Post Article</Button>
-                <ArticleList>
-                </ArticleList>
+            <Grid container spacing={24} style={{padding: 24}}>
+                <Grid>
+                    <LeftSide>
 
-                <ArticleEditor open={editorOpen} loading={false}>
-                </ArticleEditor>
-            </div>
+                    </LeftSide>
+                </Grid>
+                <Grid>
+                    <Button onClick={this.handleClick}>Post Article</Button>
+                    <ArticleList>
+                    </ArticleList>
+
+                    <ArticleEditor open={editorOpen} loading={false}>
+                    </ArticleEditor>
+                </Grid>
+            </Grid>
         )
     }
 }
