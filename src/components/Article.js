@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
@@ -21,26 +22,26 @@ const styles = theme => ({
 });
 
 const Article = (props) => {
-    const { classes } = props;
+    const { classes, article } = props;
 
     return(
         <div>
-            { props.article ? (
+            { article ? (
                 <Card>
                     <CardMedia style={{height: 0, paddingTop: '56.25%'}}
-                               image={props.article.fields.image.fields.file.url}
-                               title={props.article.fields.title}
+                               image={article.fields.image.fields.file.url}
+                               title={article.fields.title}
                     />
                     <CardContent>
                         <Typography gutterBottom variant="headline" component="h2">
-                            {props.article.fields.title}
+                            {article.fields.title}
                         </Typography>
                         <Typography component="p">
-                            {props.article.fields.description}
+                            {article.fields.description}
                         </Typography>
                     </CardContent>
                     <CardActions>
-                        <Button size="small" color="primary" href={props.article.fields.url} target="_blank">
+                        <Button size="small" color="primary" href={article.fields.url} target="_blank">
                             Go To Article
                         </Button>
                         <IconButton className={classes.actionButton} color="inherit" aria-label="Menu">
@@ -60,6 +61,11 @@ const Article = (props) => {
             ): null }
         </div>
     )
+};
+
+Article.propTypes = {
+    classes: PropTypes.object.isRequired,
+    article: PropTypes.object
 };
 
 export default withStyles(styles)(Article);

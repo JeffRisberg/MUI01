@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {queryArticles} from '../actions/articles';
 import Grid from '@material-ui/core/Grid'
@@ -6,10 +7,7 @@ import Article from './Article'
 import {withStyles} from '@material-ui/core/styles';
 
 const styles = theme => ({
-    root: {},
-    actionButton: {
-        background: "#AAF"
-    }
+    root: {}
 });
 
 class ArticleList extends Component {
@@ -29,7 +27,7 @@ class ArticleList extends Component {
             <div>
                 {articles ? (
                     <div>
-                        <Grid container spacing={24} style={{padding: 24}}>
+                        <Grid className={classes.root} container spacing={24} style={{padding: 24}}>
                             {articles.map(article => (
                                 <Grid key={article.sys.id} item xs={12} sm={6} lg={4} xl={3}>
                                     <Article article={article}/>
@@ -37,11 +35,17 @@ class ArticleList extends Component {
                             ))}
                         </Grid>
                     </div>
-                ) : "No articles found"}
+                ) : 'No articles found'}
             </div>
-        )
+        );
     }
 }
+
+ArticleList.propTypes = {
+    classes: PropTypes.object.isRequired,
+    articles: PropTypes.object,
+    queryArticles: PropTypes.object
+};
 
 const mapStateToProps = (state) => ({
     articles: state.app.articles.data,

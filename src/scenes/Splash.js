@@ -11,7 +11,7 @@ import { withStyles } from '@material-ui/core/styles';
  */
 const styles = (theme) => ({
     grid: {
-        height: '500px',
+        height: '50px',
     }
 });
 

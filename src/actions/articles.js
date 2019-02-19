@@ -53,10 +53,7 @@ export const saveArticle = (article) => {
             .then((json) => {
                 dispatch({
                     type: types.PERSIST_ARTICLE_SUCCESS,
-                    articles: [json.data],
-                    meta: {
-                        log: ['article changed']
-                    }
+                    articles: [json.data]
                 });
                 dispatch(push('/articles'));
             });
