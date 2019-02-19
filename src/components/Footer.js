@@ -15,7 +15,7 @@ function Footer(props) {
 
     return (
         <div className={classes.root}>
-            The Risberg Family
+            MUI01
         </div>
     );
 }

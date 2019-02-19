@@ -1,9 +1,9 @@
 import React from 'react';
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
-import Splash from './views/Splash'
-import Dashboard from './views/Dashboard';
-import UserList from './views/UserList';
+import Splash from './scenes/Splash'
+import Dashboard from './scenes/Dashboard';
+import UserList from './scenes/UserList';
 import {withStyles} from '@material-ui/core/styles';
 
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
