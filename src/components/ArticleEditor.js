@@ -23,7 +23,6 @@ const styles = theme => ({
     }
 });
 
-
 class ArticleEditor extends Component {
     state = {
         text: 'For the way you live',
@@ -53,8 +52,6 @@ class ArticleEditor extends Component {
     }
 
     render() {
-        console.log('ArticleEditor', this.props);
-
         const {state, props} = this;
         const { classes } = props;
         const {open, loading} = props;
@@ -112,4 +109,6 @@ const mapDispatchToProps = (dispatch) => (
     bindActionCreators({...OverlayActions}, dispatch)
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(ArticleEditor));
+export default connect(
+    mapStateToProps, mapDispatchToProps
+)(withStyles(styles)(ArticleEditor));
