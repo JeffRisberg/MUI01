@@ -62,7 +62,7 @@ app.get('/api/articles', (req, res) => {
                   "description": "Administration for ServiceNow",
                   "author": "James Towns",
                   "url": "http://www.aisera.com",
-                  "image": {"fields": {file: {url: "public/002.jpg"}}}
+                  "image": {"fields": {file: {url: "public/004.jpg"}}}
                }
             },
             {
@@ -73,6 +73,16 @@ app.get('/api/articles', (req, res) => {
                   "author": "Indu Chandrasakar",
                   "url": "http://www.quanticmind.com",
                   "image": {"fields": {file: {url: "public/006.jpg"}}}
+               }
+            },
+            {
+               "sys": {"id": 6},
+               "fields": {
+                  "title": "Knowledge-based search",
+                  "description": "Configuration tool administration",
+                  "author": "Brandon Underhill",
+                  "url": "http://www.google.com",
+                  "image": {"fields": {file: {url: "public/009.jpg"}}}
                }
             }
          ]

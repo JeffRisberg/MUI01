@@ -7,55 +7,55 @@ import Article from './Article'
 import {withStyles} from '@material-ui/core/styles';
 
 const styles = theme => ({
-    root: {}
+   root: {}
 });
 
 class ArticleList extends Component {
 
-    state = {
-        searchString: ''
-    };
+   state = {
+      searchString: ''
+   };
 
-    componentDidMount() {
-        this.props.queryArticles();
-    }
+   componentDidMount() {
+      this.props.queryArticles();
+   }
 
-    render() {
-        const {classes, articles} = this.props;
+   render() {
+      const {classes, articles} = this.props;
 
-        return (
-            <div>
-                {articles ? (
-                    <div>
-                        <Grid className={classes.root} container spacing={24} style={{padding: 24}}>
-                            {articles.map(article => (
-                                <Grid key={article.sys.id} item xs={12} sm={6} lg={4} xl={3}>
-                                    <Article article={article}/>
-                                </Grid>
-                            ))}
+      return (
+         <div>
+            {articles ? (
+               <div>
+                  <Grid className={classes.root} container spacing={24} style={{padding: 6}}>
+                     {articles.map(article => (
+                        <Grid key={article.sys.id} item xs={12} sm={6} lg={4} xl={3}>
+                           <Article article={article}/>
                         </Grid>
-                    </div>
-                ) : 'No articles found'}
-            </div>
-        );
-    }
+                     ))}
+                  </Grid>
+               </div>
+            ) : 'No articles found'}
+         </div>
+      );
+   }
 }
 
 ArticleList.propTypes = {
-    classes: PropTypes.object.isRequired,
-    articles: PropTypes.array,
-    queryArticles: PropTypes.object
+   classes: PropTypes.object.isRequired,
+   articles: PropTypes.array,
+   queryArticles: PropTypes.object
 };
 
 const mapStateToProps = (state) => ({
-    articles: state.app.articles.data,
-    status: {
-        isFetching: state.app.articles.isFetching,
-        ...state.app.appErrors,
-    },
+   articles: state.app.articles.data,
+   status: {
+      isFetching: state.app.articles.isFetching,
+      ...state.app.appErrors,
+   },
 });
 
 export default connect(
-    mapStateToProps,
-    {queryArticles}
+   mapStateToProps,
+   {queryArticles}
 )(withStyles(styles)(ArticleList));
