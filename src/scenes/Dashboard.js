@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 import ArticleList from '../components/ArticleList'
 import ArticleEditor from '../components/ArticleEditor'
-import LeftSide from '../components/LeftSide'
+import SidebarView from '../components/SidebarView'
 import {withStyles} from '@material-ui/core/styles';
 
 /**
@@ -37,9 +37,8 @@ class Dashboard extends Component {
         return (
             <Grid container spacing={24} style={{padding: 24}}>
                 <Grid>
-                    <LeftSide>
-
-                    </LeftSide>
+                    <SidebarView>
+                    </SidebarView>
                 </Grid>
                 <Grid>
                     <Button onClick={this.handleClick}>Post Article</Button>

@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-function LeftSide() {
+function SidebarView() {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(null);
 
@@ -70,7 +70,7 @@ function LeftSide() {
 
             <ExpansionPanel expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                    <Typography className={classes.heading}>Setion 4</Typography>
+                    <Typography className={classes.heading}>Section 4</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <ul>
@@ -84,4 +84,4 @@ function LeftSide() {
     );
 }
 
-export default LeftSide;
+export default SidebarView;

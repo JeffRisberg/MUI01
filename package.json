@@ -19,6 +19,7 @@
     "@material-ui/styles": "^3.0.0-alpha.10",
     "@tinymce/tinymce-react": "^3.0.1",
     "cross-fetch": "^3.0.0",
+    "make-promises-safe": "^4.0.0",
     "mysql2": "^1.6.4",
     "pino": "^5.11.1",
     "query-string": "^6.2.0",
@@ -51,12 +52,5 @@
     "react-scripts": "^2.1.5",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3"
-  },
-  "description": "Based on the React tutorial.",
-  "bugs": {
-    "url": "https://github.com/JeffRisberg/MUI01/issues"
-  },
-  "homepage": "https://github.com/JeffRisberg/MUI01#readme",
-  "main": "server.js",
-  "author": ""
+  }
 }
