@@ -24,8 +24,6 @@ class Dashboard extends Component {
     }
 
     handleClick() {
-        console.log("newArticle");
-
         // open the editor
         this.setState(state => ({
             editorOpen: !state.editorOpen
