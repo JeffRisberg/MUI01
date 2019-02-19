@@ -41,7 +41,7 @@ export const fetchArticle = (id) => {
 export const saveArticle = (article) => {
     return function (dispatch) {
 
-        return fetch('/api/articles/' + event.id, {
+        return fetch('/api/articles/' + article.id, {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
