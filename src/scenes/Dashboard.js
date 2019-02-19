@@ -33,12 +33,12 @@ class Dashboard extends Component {
     render() {
         const editorOpen = this.state.editorOpen;
         return (
-            <Grid container spacing={12} style={{padding: 12}}>
-                <Grid xs={2}>
+            <Grid container spacing={16} style={{padding: 12}}>
+                <Grid item xs={2}>
                     <SidebarView>
                     </SidebarView>
                 </Grid>
-                <Grid xs={10}>
+                <Grid item xs={10}>
                     <Button onClick={this.handleClick}>Post Article</Button>
                     <ArticleList>
                     </ArticleList>

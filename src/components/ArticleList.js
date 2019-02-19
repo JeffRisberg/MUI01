@@ -43,8 +43,7 @@ class ArticleList extends Component {
 
 ArticleList.propTypes = {
    classes: PropTypes.object.isRequired,
-   articles: PropTypes.array,
-   queryArticles: PropTypes.object
+   articles: PropTypes.array
 };
 
 const mapStateToProps = (state) => ({
