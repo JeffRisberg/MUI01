@@ -39,7 +39,7 @@ class Dashboard extends Component {
                     </SidebarView>
                 </Grid>
                 <Grid item xs={10}>
-                    <Button onClick={this.handleClick}>Post Article</Button>
+                    <Button onClick={this.handleClick}>Share Article</Button>
                     <ArticleList>
                     </ArticleList>
 

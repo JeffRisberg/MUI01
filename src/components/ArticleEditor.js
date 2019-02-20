@@ -13,102 +13,101 @@ import {Editor} from '@tinymce/tinymce-react';
 import * as OverlayActions from '../actions/Overlay';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 
 const styles = theme => ({
-    root: {
-    },
-    dialogText: {
-        color: "#000"
-    }
+   root: {},
+   dialogText: {
+      color: "#000"
+   }
 });
 
 class ArticleEditor extends Component {
-    state = {
-        text: 'For the way you live',
-        tags: 'acupuncture'
-    };
+   state = {
+      text: 'For the way you live',
+      tags: 'acupuncture'
+   };
 
-    static propTypes = {
-        open: PropTypes.bool,
-        loading: PropTypes.bool,
-    };
+   static propTypes = {
+      open: PropTypes.bool,
+      loading: PropTypes.bool,
+   };
 
-    handleSave = () => {
-        console.log('Article Text:', this.state.text, this.state.tags);
-        if (this.state.text && this.state.tags) {
-            // save
-        }
-        self.props.overlayClose('save');
-    };
+   handleSave = () => {
+      console.log('Article Text:', this.state.text, this.state.tags);
+      if (this.state.text && this.state.tags) {
+         // save
+      }
+      self.props.overlayClose('save');
+   };
 
-    handleCancel = () => {
-        const self = this;
-        self.props.overlayClose('cancel');
-    };
+   handleCancel = () => {
+      const self = this;
+      self.props.overlayClose('cancel');
+   };
 
-    componentDidMount() {
-        console.log('loading data', this.props);
-    }
+   componentDidMount() {
+      console.log('loading data', this.props);
+   }
 
-    render() {
-        const {state, props} = this;
-        const { classes } = props;
-        const {open, loading} = props;
+   render() {
+      const {state, props} = this;
+      const {classes} = props;
+      const {open, loading} = props;
 
-        return (
-            <Dialog
-                fullWidth={true}
-                open={open}
-                keepMounted
-                onClose={this.handleCancel}
-                aria-labelledby="edit-dialog-title"
-                aria-describedby="edit-dialog-description"
-            >
-                <DialogTitle id="edit-dialog-title">
-                    Create New Article
-                </DialogTitle>
-                <DialogContent>
-                    <DialogContentText className={classes.dialogText}>
-                        Enter article text:
-                    </DialogContentText>
-                    <Editor name="text"
-                            initialValue={state.text}
-                            init={{
-                                branding: false,
-                                menubar: false,
-                                plugins: 'lists link image code',
-                                toolbar: 'undo redo | bold italic underline | bullist numlist | alignleft aligncenter alignright | code'
-                            }}
-                    />
-                    <DialogContentText className={classes.dialogText}>
-                    Enter tags:
-                    </DialogContentText>
-                    <TextField name="tags" value={state.tags} fullWidth>
-                    </TextField>
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={this.handleSave} color="primary" disabled={loading}>
-                        Save
-                    </Button>
-                    <Button onClick={this.handleCancel} color="primary" disabled={loading}>
-                        Cancel
-                    </Button>
-                </DialogActions>
-            </Dialog>
-        );
-    }
+      return (
+         <Dialog
+            fullWidth={true}
+            open={open}
+            keepMounted
+            onClose={this.handleCancel}
+            aria-labelledby="edit-dialog-title"
+            aria-describedby="edit-dialog-description"
+         >
+            <DialogTitle id="edit-dialog-title">
+               Create New Article
+            </DialogTitle>
+            <DialogContent>
+               <DialogContentText className={classes.dialogText}>
+                  Enter article text:
+               </DialogContentText>
+               <Editor name="text"
+                       initialValue={state.text}
+                       init={{
+                          branding: false,
+                          menubar: false,
+                          plugins: 'lists link image code',
+                          toolbar: 'undo redo | bold italic underline | bullist numlist | alignleft aligncenter alignright | code'
+                       }}
+               />
+               <DialogContentText className={classes.dialogText}>
+                  Enter tags:
+               </DialogContentText>
+               <TextField name="tags" value={state.tags} fullWidth>
+               </TextField>
+            </DialogContent>
+            <DialogActions>
+               <Button onClick={this.handleSave} color="primary" disabled={loading}>
+                  Save
+               </Button>
+               <Button onClick={this.handleCancel} color="primary" disabled={loading}>
+                  Cancel
+               </Button>
+            </DialogActions>
+         </Dialog>
+      );
+   }
 }
 
 const mapStateToProps = (state) => {
-    console.log('ArticleEditor', state);
-    return {...state.overlay};
+   console.log('ArticleEditor', state);
+   return {...state.overlay};
 };
 
 const mapDispatchToProps = (dispatch) => (
-    bindActionCreators({...OverlayActions}, dispatch)
+   bindActionCreators({...OverlayActions}, dispatch)
 );
 
 export default connect(
-    mapStateToProps, mapDispatchToProps
+   mapStateToProps, mapDispatchToProps
 )(withStyles(styles)(ArticleEditor));
