@@ -42,7 +42,7 @@ app.get('/api/articles', (req, res) => {
                   "description": "Scalable machine learning applications",
                   "author": "Fred Smith",
                   "url": "http://www.tibco.com",
-                  "image": {"fields": {file: {url: "public/017.jpg"}}}
+                  "image": {"fields": {file: {url: "public/010.jpg"}}}
                }
             },
             {
