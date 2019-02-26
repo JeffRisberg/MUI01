@@ -10,8 +10,6 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import {Editor} from '@tinymce/tinymce-react';
 
-import * as OverlayActions from '../actions/Overlay';
-import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {withStyles} from '@material-ui/core/styles';
 
@@ -99,14 +97,27 @@ class ArticleEditor extends Component {
    }
 }
 
-const mapStateToProps = (state) => {
-   console.log('ArticleEditor', state);
-   return {...state.overlay};
-};
+const mapStateToProps = state => ({
+   initialValues: state.app.events.data,
+   status: {
+      isFetching: state.app.events.isFetching,
+      ...state.app.appErrors,
+   },
+});
 
-const mapDispatchToProps = (dispatch) => (
-   bindActionCreators({...OverlayActions}, dispatch)
-);
+const mapDispatchToProps = dispatch => ({
+   fetchHandler: (id) => {
+      dispatch(fetchArticle(id));
+   },
+   submitHandler: (values) => {
+      const event = {
+         ...values,
+         text: values.text.trim(),
+         time: values.time
+      };
+      dispatch(saveArticle(event));
+   }
+});
 
 export default connect(
    mapStateToProps, mapDispatchToProps
