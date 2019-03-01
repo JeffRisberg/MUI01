@@ -86,11 +86,10 @@ const articleList = [
 
 app.get('/api/articles/:id', (req, res) => {
    const id = parseInt(req.params.id);
-   console.log(id);
    if (id > 0 && id <= articleList.length) {
       res.send({
          'status': 'ok',
-         data: articleList[id+1]
+         data: articleList[id-1]
       });
    } else {
       res.status(404);

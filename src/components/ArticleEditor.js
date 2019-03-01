@@ -37,18 +37,13 @@ class ArticleEditor extends Component {
       if (this.state.text && this.state.tags) {
          // save
       }
-      self.props.overlayClose('save');
+      //self.props.overlayClose('save');
    };
 
    handleCancel = () => {
       const self = this;
-      self.props.overlayClose('cancel');
+      //self.props.overlayClose('cancel');
    };
-
-   componentDidMount() {
-      console.log('loading data', this.props);
-      this.props.fetchArticle(1);
-   }
 
    render() {
       const {state, props} = this;
