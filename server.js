@@ -85,13 +85,25 @@ const articleList = [
 ];
 
 app.get('/api/articles/:id', (req, res) => {
-   res.send({
-      data: articleList[0]
-   });
+   const id = parseInt(req.params.id);
+   console.log(id);
+   if (id > 0 && id <= articleList.length) {
+      res.send({
+         'status': 'ok',
+         data: articleList[id+1]
+      });
+   } else {
+      res.status(404);
+      res.send({
+         'status': 'missing',
+         'data': null
+      });
+   }
 });
 
 app.get('/api/articles', (req, res) => {
    res.send({
+      'status': 'ok',
       data: articleList
    });
 });
