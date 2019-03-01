@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
+import {fetchArticle} from '../actions/articles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
@@ -46,6 +47,7 @@ class ArticleEditor extends Component {
 
    componentDidMount() {
       console.log('loading data', this.props);
+      this.props.fetchArticle(1);
    }
 
    render() {
@@ -98,15 +100,15 @@ class ArticleEditor extends Component {
 }
 
 const mapStateToProps = state => ({
-   initialValues: state.app.events.data,
+   initialValues: state.app.articles.data,
    status: {
-      isFetching: state.app.events.isFetching,
+      isFetching: state.app.articles.isFetching,
       ...state.app.appErrors,
    },
 });
 
 const mapDispatchToProps = dispatch => ({
-   fetchHandler: (id) => {
+   fetchArticle: (id) => {
       dispatch(fetchArticle(id));
    },
    submitHandler: (values) => {
