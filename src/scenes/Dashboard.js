@@ -10,45 +10,52 @@ import {withStyles} from '@material-ui/core/styles';
  * shows an article list, with editing operations
  */
 const styles = (theme) => ({
-    grid: {
-        height: '50px',
-    }
+   grid: {
+      height: '50px',
+   }
 });
 
 class Dashboard extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {editorOpen: false};
+   constructor(props) {
+      super(props);
+      this.state = {editorOpen: false};
 
-        this.handleClick = this.handleClick.bind(this);
-    }
+      this.handleClick = this.handleClick.bind(this);
+      this.saveChanges = this.saveChanges.bind(this);
+   }
 
-    handleClick() {
-        // open the editor
-        this.setState(state => ({
-            editorOpen: !state.editorOpen
-        }));
-    }
+   handleClick() {
+      // open the editor
+      this.setState(state => ({
+         editorOpen: true
+      }));
+   }
 
-    render() {
-        const editorOpen = this.state.editorOpen;
-        return (
-            <Grid container spacing={16} style={{padding: 12}}>
-                <Grid item xs={2}>
-                    <SidebarView>
-                    </SidebarView>
-                </Grid>
-                <Grid item xs={10}>
-                    <Button onClick={this.handleClick}>Share Article</Button>
-                    <ArticleList>
-                    </ArticleList>
+   saveChanges() {
+      this.setState(state => ({
+         editorOpen: false
+      }));
+   }
 
-                    <ArticleEditor open={editorOpen} loading={false}>
-                    </ArticleEditor>
-                </Grid>
+   render() {
+      const editorOpen = this.state.editorOpen;
+      return (
+         <Grid container spacing={16} style={{padding: 12}}>
+            <Grid item xs={2}>
+               <SidebarView>
+               </SidebarView>
             </Grid>
-        )
-    }
+            <Grid item xs={10}>
+               <Button onClick={this.handleClick}>Share Article</Button>
+               <ArticleList>
+               </ArticleList>
+
+               <ArticleEditor open={editorOpen} saveChanges={this.saveChanges} loading={false}>
+               </ArticleEditor>
+            </Grid>
+         </Grid>
+      )
+   }
 }
 
 export default withStyles(styles)(Dashboard);

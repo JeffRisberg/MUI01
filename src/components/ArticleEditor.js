@@ -30,6 +30,7 @@ class ArticleEditor extends Component {
    static propTypes = {
       open: PropTypes.bool,
       loading: PropTypes.bool,
+      saveChanges: PropTypes.func
    };
 
    handleSave = () => {
@@ -37,12 +38,12 @@ class ArticleEditor extends Component {
       if (this.state.text && this.state.tags) {
          // save
       }
-      //self.props.overlayClose('save');
+      this.props.saveChanges();
    };
 
    handleCancel = () => {
       const self = this;
-      //self.props.overlayClose('cancel');
+      this.props.saveChanges();
    };
 
    render() {
