@@ -16,7 +16,7 @@ import {withStyles} from '@material-ui/core/styles';
 const styles = theme => ({
    root: {},
    actionButton: {
-      background: "#AAF",
+      background: '#AAF',
       padding: '4px'
    }
 });

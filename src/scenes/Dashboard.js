@@ -25,7 +25,6 @@ class Dashboard extends Component {
    }
 
    handleClick() {
-      // open the editor
       this.setState(state => ({
          editorOpen: true
       }));
@@ -39,6 +38,7 @@ class Dashboard extends Component {
 
    render() {
       const editorOpen = this.state.editorOpen;
+
       return (
          <Grid container spacing={16} style={{padding: 12}}>
             <Grid item xs={2}>
@@ -47,6 +47,7 @@ class Dashboard extends Component {
             </Grid>
             <Grid item xs={10}>
                <Button onClick={this.handleClick}>Share Article</Button>
+               <Button onClick={this.handleClick}>Share Tip</Button>
                <ArticleList>
                </ArticleList>
 
