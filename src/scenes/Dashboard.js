@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
-import Button from '@material-ui/core/Button'
-import Grid from '@material-ui/core/Grid'
-import ArticleList from '../components/ArticleList'
-import ArticleEditor from '../components/ArticleEditor'
-import SidebarView from '../components/SidebarView'
+import React, {Component} from 'react';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import ArticleList from '../components/ArticleList';
+import ArticleEditor from '../components/ArticleEditor';
+import SidebarView from '../components/SidebarView';
 import {withStyles} from '@material-ui/core/styles';
 
 /**

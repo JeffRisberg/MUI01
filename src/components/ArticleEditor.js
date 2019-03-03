@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
-import {fetchArticle} from '../actions/articles';
+import {fetchArticle, saveArticle} from '../actions/articles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
@@ -17,7 +17,7 @@ import {withStyles} from '@material-ui/core/styles';
 const styles = theme => ({
    root: {},
    dialogText: {
-      color: "#000"
+      color: '#000'
    }
 });
 
@@ -42,7 +42,6 @@ class ArticleEditor extends Component {
    };
 
    handleCancel = () => {
-      const self = this;
       this.props.saveChanges();
    };
 

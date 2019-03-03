@@ -15,13 +15,11 @@ const configureStore = ({ initialState = {}, history }) => {
     thunk
   ];
 
-  const store = createStore(
+  return createStore(
     reducer,
     initialState,
     applyMiddleware(...middlewares),
   );
-
-  return store;
 };
 
 export default configureStore;
