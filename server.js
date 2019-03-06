@@ -84,12 +84,29 @@ const articleList = [
    }
 ];
 
+const tagList = [
+   'Cycling',
+   'Nutrition',
+   'Running',
+   'Cancer',
+   'Dancing',
+   'Swimming',
+   'Mental Wellbeing',
+   'Massage',
+   'Yoga',
+   'Acupuncture',
+   'Bodybuilding',
+   'Fitness',
+   'Aerobics',
+   'Acupressure'
+];
+
 app.get('/api/articles/:id', (req, res) => {
    const id = parseInt(req.params.id);
    if (id > 0 && id <= articleList.length) {
       res.send({
          'status': 'ok',
-         data: articleList[id-1]
+         data: articleList[id - 1]
       });
    } else {
       res.status(404);
@@ -104,6 +121,13 @@ app.get('/api/articles', (req, res) => {
    res.send({
       'status': 'ok',
       data: articleList
+   });
+});
+
+app.get('/api/tags', (req, res) => {
+   res.send({
+      'status': 'ok',
+      data: tagList
    });
 });
 
