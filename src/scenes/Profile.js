@@ -18,13 +18,13 @@ const styles = (theme) => ({
 class Profile extends Component {
 
    render() {
-      const {classes} = props;
+      const {classes} = this.props;
 
       return (
          <div>
             <Card>
                <CardContent>
-                  <Typography gutterBottom variant="headline" component="h2">
+                  <Typography gutterBottom variant="h4">
                      Your Profile
                   </Typography>
                   <form className={classes.container} noValidate autoComplete="off">
@@ -64,7 +64,7 @@ class Profile extends Component {
                         margin="normal"
                      />
                   </form>
-                  <Typography component="p">
+                  <Typography gutterBottom variant="h4">
                      Your Tags
                   </Typography>
                </CardContent>
