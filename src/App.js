@@ -6,6 +6,7 @@ import Navigation from './components/Navigation';
 import Splash from './scenes/Splash'
 import Dashboard from './scenes/Dashboard';
 import UserList from './scenes/UserList';
+import Profile from './scenes/Profile';
 import {withStyles} from '@material-ui/core/styles';
 
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
@@ -68,6 +69,7 @@ class App extends Component {
                      <Route path="/" exact component={Splash}/>
                      <Route path="/dashboard" component={Dashboard}/>
                      <Route path="/users" component={UserList}/>
+                     <Route path="/profile" component={Profile}/>
                   </Switch>
                </Router>
                <Footer/>

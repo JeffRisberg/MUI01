@@ -6,7 +6,7 @@ import SignIn from '../components/SignIn'
 import { withStyles } from '@material-ui/core/styles';
 
 /**
- * the welcome screen, with sign-in
+ * the Profile screen, with sign-in
  */
 const styles = (theme) => ({
     grid: {
@@ -14,7 +14,7 @@ const styles = (theme) => ({
     }
 });
 
-class Splash extends Component {
+class Profile extends Component {
 
     render() {
         return (
@@ -29,10 +29,9 @@ class Splash extends Component {
                         </Typography>
                     </CardContent>
                 </Card>
-                <SignIn/>
             </div>
         )
     }
 }
 
-export default withStyles(styles)(Splash);
+export default withStyles(styles)(Profile);
