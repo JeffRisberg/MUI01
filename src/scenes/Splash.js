@@ -21,7 +21,7 @@ class Splash extends Component {
          <div>
             <Card>
                <CardContent>
-                  <Typography gutterBottom variant="headline" component="h2">
+                  <Typography gutterBottom component="h2">
                      Welcome
                   </Typography>
                   <Typography component="p">
