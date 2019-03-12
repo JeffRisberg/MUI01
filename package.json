@@ -22,7 +22,7 @@
     "make-promises-safe": "^4.0.0",
     "mysql2": "^1.6.4",
     "pino": "^5.11.1",
-    "query-string": "^6.3.0",
+    "query-string": "^6.4.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-redux": "^5.1.1",
@@ -43,7 +43,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.3",
-    "eslint": "^5.15.1",
+    "eslint": "^5.15.2",
     "express": "^4.16.4",
     "file-loader": "^2.0.0",
     "nconf": "^0.10.0",
@@ -51,6 +51,6 @@
     "react-hot-loader": "^4.8.0",
     "react-scripts": "^2.1.8",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.3.0"
   }
 }
