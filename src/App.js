@@ -37,6 +37,9 @@ const styles = {
 };
 
 const theme = createMuiTheme({
+   typography: {
+      useNextVariants: true,
+   },
    palette: {
       primary: lightBlue,
       secondary: grey,
