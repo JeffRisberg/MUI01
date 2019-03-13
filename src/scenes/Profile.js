@@ -6,6 +6,9 @@ import {queryTags} from '../actions/tags';
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import TextField from '@material-ui/core/TextField';
+import Checkbox from '@material-ui/core/Checkbox';
+import Grid from '@material-ui/core/Grid';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Typography from '@material-ui/core/Typography'
 import {withStyles} from '@material-ui/core/styles';
 
@@ -27,10 +30,17 @@ class Profile extends Component {
    render() {
       const {classes, tags} = this.props;
 
-      const tagItems = tags.map((tag,key) => {
-         return <li key={key}>
-            {tag}
-         </li>
+      const tagItems = tags.map((tag, key) => {
+         return (
+         <Grid item key={key}>
+            <FormControlLabel
+               control={
+                  <Checkbox value="checkedF" />
+               }
+               label={tag}
+            />
+         </Grid>
+         )
       });
 
       return (
@@ -80,7 +90,9 @@ class Profile extends Component {
                   <Typography gutterBottom variant="h4">
                      Your Tags
                   </Typography>
-                  <ul>{tagItems}</ul>
+                  <Grid container>
+                     {tagItems}
+                  </Grid>
                </CardContent>
             </Card>
          </div>
