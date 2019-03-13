@@ -47,7 +47,7 @@ class Profile extends Component {
          <div>
             <Card>
                <CardContent>
-                  <Typography gutterBottom variant="h4">
+                  <Typography gutterBottom variant="h5">
                      Your Profile
                   </Typography>
                   <form className={classes.container} noValidate autoComplete="off">
@@ -87,7 +87,7 @@ class Profile extends Component {
                         margin="normal"
                      />
                   </form>
-                  <Typography gutterBottom variant="h4">
+                  <Typography gutterBottom variant="h5">
                      Your Tags
                   </Typography>
                   <Grid container>
