@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {queryTags} from '../actions/tags';
+
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import TextField from '@material-ui/core/TextField';
@@ -17,8 +20,18 @@ const styles = (theme) => ({
 
 class Profile extends Component {
 
+   componentDidMount() {
+      this.props.queryTags();
+   }
+
    render() {
-      const {classes} = this.props;
+      const {classes, tags} = this.props;
+
+      const tagItems = tags.map((tag,key) => {
+         return <li key={key}>
+            {tag}
+         </li>
+      });
 
       return (
          <div>
@@ -67,6 +80,7 @@ class Profile extends Component {
                   <Typography gutterBottom variant="h4">
                      Your Tags
                   </Typography>
+                  <ul>{tagItems}</ul>
                </CardContent>
             </Card>
          </div>
@@ -76,6 +90,18 @@ class Profile extends Component {
 
 Profile.propTypes = {
    classes: PropTypes.object.isRequired,
+   tags: PropTypes.array
 };
 
-export default withStyles(styles)(Profile);
+const mapStateToProps = (state) => ({
+   tags: state.app.tags.data,
+   status: {
+      isFetching: state.app.tags.isFetching,
+      ...state.app.appErrors,
+   },
+});
+
+export default connect(
+   mapStateToProps,
+   {queryTags}
+)(withStyles(styles)(Profile));
