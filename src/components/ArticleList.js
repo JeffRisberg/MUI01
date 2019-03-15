@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {queryArticles} from '../actions/articles';
-import Grid from '@material-ui/core/Grid'
-import Article from './Article'
+import Article from './Article';
+import Grid from '@material-ui/core/Grid';
 import {withStyles} from '@material-ui/core/styles';
 
 const styles = theme => ({
@@ -11,6 +11,11 @@ const styles = theme => ({
 });
 
 class ArticleList extends Component {
+   static propTypes = {
+      classes: PropTypes.object.isRequired,
+      //queryArticles: PropTypes.function,
+      articles: PropTypes.array
+   };
 
    state = {
       searchString: ''
@@ -27,7 +32,7 @@ class ArticleList extends Component {
          <div>
             {articles ? (
                <div>
-                  <Grid className={classes.root} container spacing={24} style={{padding: 6}}>
+                  <Grid className={classes.root} container spacing={24} style={{padding: 24}}>
                      {articles.map(article => (
                         <Grid key={article.sys.id} item xs={12} sm={6} lg={4} xl={3}>
                            <Article article={article}/>
@@ -40,11 +45,6 @@ class ArticleList extends Component {
       );
    }
 }
-
-ArticleList.propTypes = {
-   classes: PropTypes.object.isRequired,
-   articles: PropTypes.array
-};
 
 const mapStateToProps = (state) => ({
    articles: state.app.articles.data,

@@ -1,15 +1,15 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {queryTags} from '../actions/tags';
 
-import Card from '@material-ui/core/Card'
-import CardContent from '@material-ui/core/CardContent'
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
 import Grid from '@material-ui/core/Grid';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Typography from '@material-ui/core/Typography'
+import Typography from '@material-ui/core/Typography';
 import {withStyles} from '@material-ui/core/styles';
 
 /**
@@ -22,6 +22,10 @@ const styles = (theme) => ({
 });
 
 class Profile extends Component {
+   static propTypes = {
+      classes: PropTypes.object.isRequired,
+      tags: PropTypes.array
+   };
 
    componentDidMount() {
       this.props.queryTags();
@@ -32,14 +36,14 @@ class Profile extends Component {
 
       const tagItems = tags.map((tag, key) => {
          return (
-         <Grid item key={key}>
-            <FormControlLabel
-               control={
-                  <Checkbox value="checkedF" />
-               }
-               label={tag}
-            />
-         </Grid>
+            <Grid item key={key}>
+               <FormControlLabel
+                  control={
+                     <Checkbox value="checkedF" />
+                  }
+                  label={tag}
+               />
+            </Grid>
          )
       });
 
@@ -96,14 +100,9 @@ class Profile extends Component {
                </CardContent>
             </Card>
          </div>
-      )
+      );
    }
 }
-
-Profile.propTypes = {
-   classes: PropTypes.object.isRequired,
-   tags: PropTypes.array
-};
 
 const mapStateToProps = (state) => ({
    tags: state.app.tags.data,
