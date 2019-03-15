@@ -24,6 +24,7 @@ const styles = (theme) => ({
 class Profile extends Component {
    static propTypes = {
       classes: PropTypes.object.isRequired,
+      queryTags: PropTypes.func,
       tags: PropTypes.array
    };
 

@@ -13,7 +13,7 @@ const styles = theme => ({
 class ArticleList extends Component {
    static propTypes = {
       classes: PropTypes.object.isRequired,
-      //queryArticles: PropTypes.function,
+      queryArticles: PropTypes.func,
       articles: PropTypes.array
    };
 

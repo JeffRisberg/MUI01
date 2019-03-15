@@ -9,7 +9,7 @@ export default handleActions({
       });
    },
    [types.FETCH_ARTICLES_SUCCESS]: (state, action) => {
-      return Object.asssign({}, {data: action.articles}, {
+      return Object.assign({}, {data: action.articles}, {
          isFetching: false,
       });
    },
