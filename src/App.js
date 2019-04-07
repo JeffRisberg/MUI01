@@ -54,12 +54,16 @@ const theme = createMuiTheme({
 });
 
 class App extends Component {
+   static propTypes = {
+      history: PropTypes.object.isRequired
+   };
+
    state = {
       //  theme: Themes()
    };
 
    render() {
-      const {classes} = this.props;
+      const {history, classes} = this.props;
 
       return (
          <MuiThemeProvider theme={theme}>
