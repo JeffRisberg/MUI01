@@ -93,6 +93,11 @@ const styles = theme => ({
 });
 
 class Navigation extends Component {
+   static propTypes = {
+      classes: PropTypes.object.isRequired,
+      history: PropTypes.object
+   };
+
    state = {
       anchorEl: null
    };
@@ -108,10 +113,10 @@ class Navigation extends Component {
    render() {
       const {anchorEl} = this.state;
 
-      const {classes, location} = this.props;
+      const {classes, history} = this.props;
       const isMenuOpen = Boolean(anchorEl);
 
-      let title = location.pathname.replace(/^\/([^/]*)(?:[/\d]+([^/]+))?.*?$/, '$1 $2');
+      let title = history.location.pathname.replace(/^\/([^/]*)(?:[/\d]+([^/]+))?.*?$/, '$1 $2');
 
       if (title === null || title === '' || title === ' ') title = 'Home';
 
@@ -187,10 +192,5 @@ class Navigation extends Component {
       );
    }
 }
-
-Navigation.propTypes = {
-   classes: PropTypes.object.isRequired,
-   location: PropTypes.object.isRequired
-};
 
 export default withStyles(styles)(Navigation);

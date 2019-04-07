@@ -19,7 +19,9 @@
       "@material-ui/styles": "^3.0.0-alpha.10",
       "@tinymce/tinymce-react": "^3.0.1",
       "cross-fetch": "^3.0.2",
+      "history": "^4.9.0",
       "make-promises-safe": "^4.0.0",
+      "mini-css-extract-plugin": "^0.5.0",
       "mysql2": "^1.6.4",
       "pino": "^5.12.2",
       "query-string": "^6.4.2",
@@ -28,7 +30,7 @@
       "react-redux": "^6.0.1",
       "react-router": "^5.0.0",
       "react-router-dom": "^5.0.0",
-      "react-router-redux": "4.0.8",
+      "react-router-redux": "^4.0.8",
       "redux": "^4.0.1",
       "redux-actions": "^2.6.5",
       "redux-thunk": "^2.3.0"

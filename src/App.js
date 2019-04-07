@@ -14,7 +14,7 @@ import createMuiTheme from '@material-ui/core/styles/createMuiTheme'
 import lightBlue from '@material-ui/core/colors/lightBlue';
 import grey from '@material-ui/core/colors/grey';
 
-import {HashRouter as Router, Route, Switch} from 'react-router-dom';
+import {Router, Route, Switch} from 'react-router-dom';
 
 const styles = {
    root: {
@@ -55,6 +55,7 @@ const theme = createMuiTheme({
 
 class App extends Component {
    static propTypes = {
+      classes: PropTypes.object,
       history: PropTypes.object.isRequired
    };
 
@@ -66,22 +67,20 @@ class App extends Component {
       const {history, classes} = this.props;
 
       return (
-         <MuiThemeProvider theme={theme}>
-            <Paper className={classes.app}>
-               <Router>
-                  <Route path='/' component={Navigation}/>
-               </Router>
-               <Router>
+         <Router history={history}>
+            <MuiThemeProvider theme={theme}>
+               <Paper className={classes.app}>
+                  <Navigation history={history} />
                   <Switch>
                      <Route path="/" exact component={Splash}/>
                      <Route path="/dashboard" component={Dashboard}/>
                      <Route path="/users" component={UserList}/>
                      <Route path="/profile" component={Profile}/>
                   </Switch>
-               </Router>
-               <Footer/>
-            </Paper>
-         </MuiThemeProvider>
+                  <Footer/>
+               </Paper>
+            </MuiThemeProvider>
+         </Router>
       );
    }
 }
