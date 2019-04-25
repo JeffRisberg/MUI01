@@ -27,9 +27,9 @@ class Splash extends Component {
                   <Typography variant="h4">
                      Article manager
                   </Typography>
+                  <SignIn/>
                </CardContent>
             </Card>
-            <SignIn/>
          </div>
       )
    }

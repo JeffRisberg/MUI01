@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
+import Typography from "@material-ui/core/Typography";
 
 const styles = {
    root: {
@@ -15,7 +16,9 @@ function Footer(props) {
 
    return (
       <div className={classes.root}>
-         MUI01
+         <Typography>
+            MUI01
+         </Typography>
       </div>
    );
 }
