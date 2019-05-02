@@ -4,10 +4,11 @@ import {Router, Route, Switch} from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
-import Splash from './scenes/Splash'
+import Catalog from './scenes/Catalog';
 import Dashboard from './scenes/Dashboard';
-import UserList from './scenes/UserList';
 import Profile from './scenes/Profile';
+import Splash from './scenes/Splash'
+import UserList from './scenes/UserList';
 import {withStyles} from '@material-ui/core/styles';
 
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
@@ -73,6 +74,7 @@ class App extends Component {
                   <Switch>
                      <Route path="/" exact component={Splash}/>
                      <Route path="/dashboard" component={Dashboard}/>
+                     <Route path="/catalog" component={Catalog}/>
                      <Route path="/users" component={UserList}/>
                      <Route path="/profile" component={Profile}/>
                   </Switch>

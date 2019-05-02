@@ -139,6 +139,11 @@ class Navigation extends Component {
                </NavLink>
             </MenuItem>
             <MenuItem onClick={this.handleMenuClose}>
+               <NavLink className={classes.navLink} to='/catalog'>
+                  Catalog
+               </NavLink>
+            </MenuItem>
+            <MenuItem onClick={this.handleMenuClose}>
                <NavLink className={classes.navLink} to='/profile'>
                   Profile
                </NavLink>
