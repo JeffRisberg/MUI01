@@ -32,7 +32,7 @@ class ArticleList extends Component {
          <div>
             {articles ? (
                <div>
-                  <Grid className={classes.root} container spacing={24} style={{padding: 24}}>
+                  <Grid className={classes.root} container style={{padding: 24}}>
                      {articles.map(article => (
                         <Grid key={article.sys.id} item xs={12} sm={6} lg={4} xl={3}>
                            <Article article={article}/>

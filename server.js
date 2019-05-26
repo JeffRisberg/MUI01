@@ -29,7 +29,7 @@ const articleList = [
          "description": "Covers updates to React during 2018",
          "author": "Tom Jones",
          "url": "http://www.reactjs.org",
-         "image": {"fields": {file: {url: "public/015.jpg"}}}
+         "image": {"fields": {file: {url: "/015.jpg"}}}
       }
    },
    {
@@ -39,7 +39,7 @@ const articleList = [
          "description": "Scalable machine learning applications",
          "author": "Fred Smith",
          "url": "http://www.tibco.com",
-         "image": {"fields": {file: {url: "public/010.jpg"}}}
+         "image": {"fields": {file: {url: "010.jpg"}}}
       }
    },
    {
@@ -49,7 +49,7 @@ const articleList = [
          "description": "Allows you to manage a Kubernetes cluster",
          "author": "Peter Woods",
          "url": "http://www.blizzard.com",
-         "image": {"fields": {file: {url: "public/016.jpg"}}}
+         "image": {"fields": {file: {url: "016.jpg"}}}
       }
    },
    {
@@ -59,7 +59,7 @@ const articleList = [
          "description": "Administration for ServiceNow",
          "author": "James Towns",
          "url": "http://www.aisera.com",
-         "image": {"fields": {file: {url: "public/004.jpg"}}}
+         "image": {"fields": {file: {url: "004.jpg"}}}
       }
    },
    {
@@ -69,7 +69,7 @@ const articleList = [
          "description": "For performance optimization",
          "author": "Indu Chandrasakar",
          "url": "http://www.quanticmind.com",
-         "image": {"fields": {file: {url: "public/006.jpg"}}}
+         "image": {"fields": {file: {url: "006.jpg"}}}
       }
    },
    {
@@ -79,7 +79,7 @@ const articleList = [
          "description": "Configuration tool administration",
          "author": "Brandon Underhill",
          "url": "http://www.google.com",
-         "image": {"fields": {file: {url: "public/009.jpg"}}}
+         "image": {"fields": {file: {url: "009.jpg"}}}
       }
    }
 ];
