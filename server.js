@@ -14,12 +14,12 @@ nconf.argv().env().file({file: defaultConfig}).defaults({ENV: 'development'});
 const PATH_DIST = path.resolve(__dirname, ROOT, 'dist');
 const PATH_PUBLIC = path.resolve(__dirname, ROOT, 'public');
 
-app.use('/public', express.static(PATH_PUBLIC));
+app.use('/', express.static(PATH_PUBLIC));
 app.use(express.static(PATH_DIST));
 
-app.get('/', (req, res) => {
-   res.sendFile(path.resolve(__dirname, 'public/index.html'));
-});
+//app.get('/', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, 'public/index.html'));
+//});
 
 const articleList = [
    {

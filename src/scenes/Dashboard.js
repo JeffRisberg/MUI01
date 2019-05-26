@@ -40,7 +40,7 @@ class Dashboard extends Component {
       const editorOpen = this.state.editorOpen;
 
       return (
-         <Grid container spacing={16} style={{padding: 12}}>
+         <Grid container style={{padding: 12}}>
             <Grid item xs={2}>
                <SidebarView>
                </SidebarView>

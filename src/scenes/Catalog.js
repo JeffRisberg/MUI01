@@ -24,7 +24,7 @@ const styles = (theme) => ({
       height: 60,
    },
    progress: {
-      margin: theme.spacing.unit * 2,
+      margin: theme.spacing(2),
    },
 });
 
@@ -54,7 +54,7 @@ class Catalog extends Component {
          <div>
             <Card>
                <CardContent>
-                  <Typography gutterBottom variant="h4">
+                  <Typography gutterBottom>
                      Catalog
                   </Typography>
 
