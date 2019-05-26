@@ -17,10 +17,6 @@ const PATH_PUBLIC = path.resolve(__dirname, ROOT, 'public');
 app.use('/', express.static(PATH_PUBLIC));
 app.use(express.static(PATH_DIST));
 
-//app.get('/', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, 'public/index.html'));
-//});
-
 const articleList = [
    {
       "sys": {"id": 1},
