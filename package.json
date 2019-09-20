@@ -14,16 +14,16 @@
    },
    "license": "MIT",
    "dependencies": {
-      "@material-ui/core": "^4.4.0",
-      "@material-ui/icons": "^4.2.1",
-      "@material-ui/styles": "^4.3.3",
+      "@material-ui/core": "^4.4.3",
+      "@material-ui/icons": "^4.4.3",
+      "@material-ui/styles": "^4.4.3",
       "@tinymce/tinymce-react": "^3.3.1",
       "cross-fetch": "^3.0.4",
-      "history": "^4.9.0",
+      "history": "^4.10.1",
       "make-promises-safe": "^5.0.0",
       "mini-css-extract-plugin": "^0.6.0",
       "mysql2": "^1.7.0",
-      "pino": "^5.13.2",
+      "pino": "^5.13.3",
       "query-string": "^6.8.3",
       "react": "^16.9.0",
       "react-dom": "^16.9.0",
@@ -50,9 +50,9 @@
       "file-loader": "^2.0.0",
       "nconf": "^0.10.0",
       "react-addons-test-utils": "^15.6.2",
-      "react-hot-loader": "^4.12.12",
-      "react-scripts": "^3.1.1",
-      "webpack": "^4.39.3",
-      "webpack-cli": "^3.3.7"
+      "react-hot-loader": "^4.12.13",
+      "react-scripts": "^3.1.2",
+      "webpack": "^4.40.2",
+      "webpack-cli": "^3.3.9"
    }
 }
