@@ -11,7 +11,7 @@ import Splash from './scenes/Splash'
 import UserList from './scenes/UserList';
 import {withStyles} from '@material-ui/core/styles';
 
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
+import { MuiThemeProvider } from '@material-ui/core/styles'
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme'
 import lightBlue from '@material-ui/core/colors/lightBlue';
 import grey from '@material-ui/core/colors/grey';
