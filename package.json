@@ -21,7 +21,7 @@
       "cross-fetch": "^3.0.4",
       "history": "^4.10.1",
       "make-promises-safe": "^5.1.0",
-      "mini-css-extract-plugin": "^0.8.0",
+      "mini-css-extract-plugin": "^0.8.2",
       "mysql2": "^1.7.0",
       "pino": "^5.15.0",
       "query-string": "^6.9.0",
@@ -52,7 +52,7 @@
       "react-addons-test-utils": "^15.6.2",
       "react-hot-loader": "^4.12.18",
       "react-scripts": "^3.3.0",
-      "webpack": "^4.41.3",
+      "webpack": "^4.41.4",
       "webpack-cli": "^3.3.10"
    }
 }
