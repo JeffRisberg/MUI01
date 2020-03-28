@@ -22,7 +22,7 @@ const articleList = [
       "sys": {"id": 1},
       "fields": {
          "title": "How to use React for Applications",
-         "description": "Covers updates to React during 2018",
+         "description": "Covers updates to React during 2019",
          "author": "Tom Jones",
          "url": "http://www.reactjs.org",
          "image": {"fields": {file: {url: "/015.jpg"}}}
@@ -41,10 +41,10 @@ const articleList = [
    {
       "sys": {"id": 3},
       "fields": {
-         "title": "Kubernetes management at scale",
+         "title": "Kubernetes Management at Scale",
          "description": "Allows you to manage a Kubernetes cluster",
          "author": "Peter Woods",
-         "url": "http://www.blizzard.com",
+         "url": "http://www.google.com",
          "image": {"fields": {file: {url: "016.jpg"}}}
       }
    },
