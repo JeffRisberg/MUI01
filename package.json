@@ -48,7 +48,7 @@
       "react-addons-test-utils": "^15.6.2",
       "react-hot-loader": "^4.12.21",
       "react-scripts": "^3.4.1",
-      "webpack": "^4.44.0",
+      "webpack": "^4.44.1",
       "webpack-cli": "^3.3.12"
    }
 }
